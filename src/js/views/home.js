@@ -1,69 +1,66 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext.js";
-import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
+import "../../styles/home.css";
 
 
 
 export const Home = () => {
 
-	const [todo, setTodo] = useState("")
-
 	const { store, actions } = useContext(Context);
-	console.log(store.charactersApi);
 
 	const navigate = useNavigate();
 
-
-
 	return (
-		<div className="text-center mt-5 container ">
-			<h1>Mi lista de personajes</h1>
-			<div>
-				{store.favorites.map((favorito,index) => {
-                   return (
-                     <p key={`${favorito._id}-${index}`}>{favorito.properties.name}</p>
+		<div className="container">
+			<h1 className="text-danger d-flex justify-content-start m-3" >Characters</h1>
+			<div className="wrapper">
+				{store.charactersApi.map((person) => {
+					return (
+						<div key={person._id} >
+							<div className="card item ">
+								<img src="https://picsum.photos/200" className="card-img-top  " alt="..."></img>
+								<div className="card-body">
+									<h4 className="card-title"><b>{person.properties.name}</b></h4>
+									<div className="my-1"> Gender: {person.properties.gender}</div>
+									<div className="my-1">Hair: {person.properties.hair_color}</div>
+									<div className="mt-1 mb-3">Eye-Color: {person.properties.eye_color}</div>
+									<div className="d-flex justify-content-between">
+										<button type="button" className="btn btn-outline-primary" onClick={() => navigate(`/PersonDetails/${person.uid}`)}><b>Lear More!</b></button>
+										<button type="button" className="btn btn-outline-warning" onClick={() => actions.addFavorite(person)} ><i className="far fa-heart" ></i></button>
+									</div>
+								</div>
+							</div>
+						</div>
 
-				   )              
-
-
+					)
 				})}
 			</div>
 
-			{store.charactersApi.map((personaje) => {
-				return (
-					<div>
-						<div className="card m-2 " key={personaje._id} >
-							<p>{personaje.properties.name}</p>
-							<p>{personaje.properties.gender}</p>
-							<p>{personaje.properties.hair_color}</p>
-							<p>{personaje.properties.eye_color}</p>					
-
-                         <div className="d-flex">   
-							<button onClick={() => navigate(`/PersonDetails/${personaje.uid}`)}>Lear More</button>
-						    <button onClick={() => actions.addFavorite(personaje)} className="btn">corazon</button>
+			<h1 className="text-danger d-flex justify-content-start m-3">Planets</h1>
+			<div className="wrapper">
+				{store.planetApi.map((planets) => {
+					return (
+						<div key={planets._id} >
+							<div className="card item">
+								<img src="https://picsum.photos/200" className="card-img-top  " alt="..."></img>
+								<div className="card-body contain" >
+									<h4 className="card-title"><b>{planets.properties.name}</b></h4>
+									<div className="my-1"> Population: {planets.properties.population}</div>
+									<div className="my-1 mb-3">Terraint: {planets.properties.terrain}</div>
+									<div className="d-flex ">
+										<button type="button" className="btn btn-outline-primary" onClick={() => navigate(`/Planetdetails/${planets.uid}`)}><b>Lear More!</b></button>
+										<button type="button" className="btn btn-outline-warning mx-2" onClick={() => actions.addFavorite(planets)} ><i className="far fa-heart" ></i></button>
+									</div>
+								</div>
+							</div>
 						</div>
-						</div>
-					</div>
-				)
-			})}
-
-			<h1>Planetas</h1>
-			{store.planetApi.map((planets) => {
-				return (
-					<div>
-						<div className="card m-2" key={planets._id} >
-							{planets.properties.name}
-							<p>{planets.properties.population}</p>
-							<p>{planets.properties.diameter}</p>	
-							<button onClick={() => navigate(`/Planetdetails/${planets.uid}`)}>Lear More</button>
-						</div>
-					</div>
-				)
-			})}
-
-
-
+					)
+				})}
+			</div>
 		</div>
+
+
+
 	)
 };

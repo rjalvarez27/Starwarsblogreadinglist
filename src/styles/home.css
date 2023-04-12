@@ -1,0 +1,25 @@
+.wrapper {
+
+    display: flex;    
+    height: 635px;
+    overflow-x: auto;
+}
+
+.wrapper::-webkit-scrollbar {
+    height: 8px;  
+
+}
+
+
+.wrapper::-webkit-scrollbar-thumb {
+    background: #D3D3D3;
+    border-radius: 10px;
+}
+
+.item {    
+    width: 380px;
+    margin : 20px;
+}
+
+
+
