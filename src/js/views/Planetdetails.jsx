@@ -30,10 +30,9 @@ const Planetdetails = () => {
                    <div className=" border-bottom border-danger">
                    <img src="https://picsum.photos/200" className="rounded float-start col-6 m-5" width= "600px" alt="..."/>               
                    <h1 className="text-center m-5">{current?.properties?.name}</h1>
-                   <p className="fs-3 text-center m-2">{current?.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facere laudantium 
+                   <p className="fs-2 text-center m-2">{current?.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facere laudantium 
                    iste qui voluptates error assumenda delectus velit cumque! Minima quia molestiae aliquam iure optio atque 
-                   similique possimus debitis sint Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, delectus libero maiores quisquam 
-                   veniam similique numquam aut ullam accusamus saepe a autem? Sequi, voluptates. Molestiae, distinctio. Cum suscipit dignissimos que.</p>
+                   </p>
                    </div>                  
                       <div className=" d-flex justify-content-around text-danger m-4">
                          <span className="text-center">
