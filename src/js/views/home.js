@@ -19,7 +19,7 @@ export const Home = () => {
 					return (
 						<div key={person._id} >
 							<div className="card item ">
-								<img src="https://picsum.photos/200" className="card-img-top  " alt="..."></img>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" className="card-img-top  " alt="..."></img>
 								<div className="card-body">
 									<h4 className="card-title"><b>{person.properties.name}</b></h4>
 									<div className="my-1"> Gender: {person.properties.gender}</div>
@@ -43,7 +43,7 @@ export const Home = () => {
 					return (
 						<div key={planets._id} >
 							<div className="card item">
-								<img src="https://picsum.photos/200" className="card-img-top  " alt="..."></img>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" className="card-img-top  " alt="..."></img>
 								<div className="card-body contain" >
 									<h4 className="card-title"><b>{planets.properties.name}</b></h4>
 									<div className="my-1"> Population: {planets.properties.population}</div>
