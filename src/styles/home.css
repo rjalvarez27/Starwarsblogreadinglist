@@ -21,5 +21,8 @@
     margin : 20px;
 }
 
-
+.card-img-top {
+    height: 380px;
+    width: 380px;
+}
 

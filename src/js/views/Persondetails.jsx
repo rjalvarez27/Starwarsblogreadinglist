@@ -28,7 +28,7 @@ const PersonDetails = () => {
             <div className="container">
             <div className="card d-flex justify-content-around border border-0 " >
                <div className=" border-bottom border-danger">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" className="rounded float-start col-6 m-5" width= "600px" alt="..."/>               
+               <img src={`https://starwars-visualguide.com/assets/img/characters/${current.uid}.jpg`} className="rounded float-start col-6 m-5" width= "600px" alt="..."/>               
                <h1 className="text-center m-5">{current?.properties?.name}</h1>
                <p className="fs-2 text-center m-2">{current?.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facere laudantium 
                iste qui voluptates error assumenda delectus velit cumque! Minima quia molestiae aliquam iure optio atque 
